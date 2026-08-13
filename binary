@@ -1,0 +1,59 @@
+#include <stdio.h>
+int main() {
+int a[10],n,key,i,choice;
+int low,high,mid,found=0;
+
+printf("Enter the number of elements:");
+scanf("%d",&n);
+
+printf("Enter the elements:\n");
+for(i=0;i<n;i++){
+scanf("%d",&a[i]);
+}
+
+printf("\n Choose search method:\n");
+printf("1.Sequential search\n");
+printf("2.Binary search\n");
+printf("Enter your choice:");
+scanf("%d",&choice);
+printf("Enter the element to search:");
+scanf("%d",&key);
+switch(choice){
+
+case 1:
+for (i=0;i<n;i++){
+if(a[i]==key){
+printf("Element found at position%d\n",i+1);
+found=1;
+break;
+}
+}
+if(found==0)
+printf("Element not found.\n");
+break;
+
+case 2:
+low=0;
+high=n-1;
+while(low<=high)
+{
+mid=(low+high)/2;
+if(a[mid]==key){
+printf("Element found at position%d\n",mid+1);
+found=1;
+break;
+}
+else if(key<a[mid])
+high=mid-1;
+else
+low=mid+1;
+}
+if (found=0)
+printf("Element not found.\n");
+break;
+
+default:
+printf("Invalid Choice !\n");
+}
+return 0;
+}
