@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+ int main () {
+ int n,i;
+ float a[100], mean=0,sum=0,sd=0;
+ printf("Enter number of elements :");
+ scanf("%d",&n);
+ printf("Enter%d numbers :\n",n);
+ for(i=0; i<n;i++) {
+ scanf ("%f",&a[i]);
+ sum+=a[i];
+ }
+ 
+ mean=sum/n;
+ for(i=0;i<n;i++) {
+ sd+=pow (a[i]-mean,2);
+ }
+ sd=sqrt(sd/n);
+ printf("mean=%.2f\n",mean);
+ printf("standard deviation =%.2f\n",sd);
+ return 0;
+
+ }
