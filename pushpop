@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    int stack[100];
+    int top = -1;
+    int n, i, fact = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // Push
+    for(i = 1; i <= n; i++)
+    {
+        top++;
+        stack[top] = i;
+    }
+
+    // Pop
+    while(top >= 0)
+    {
+        fact = fact * stack[top];
+        top--;
+    }
+
+    printf("Factorial = %d", fact);
+
+    return 0;
+}
