@@ -2,28 +2,20 @@
 
 int main()
 {
-    int stack[100];
-    int top = -1;
-    int n, i, fact = 1;
+    int s[100],top=-1,n,i,f=1;
 
     printf("Enter a number: ");
-    scanf("%d", &n);
+    scanf("%d",&n);
 
-    // Push
-    for(i = 1; i <= n; i++)
-    {
-        top++;
-        stack[top] = i;
-    }
+    /* PUSH */
+    for(i=1;i<=n;i++)
+        s[++top]=i;
 
-    // Pop
-    while(top >= 0)
-    {
-        fact = fact * stack[top];
-        top--;
-    }
+    /* POP */
+    while(top>=0)
+        f*=s[top--];
 
-    printf("Factorial = %d", fact);
+    printf("Factorial = %d",f);
 
     return 0;
 }
