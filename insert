@@ -2,32 +2,24 @@
 
 int main()
 {
-    int queue[5];
-    int front = 0, rear = -1;
-    int i;
+    int q[5],front=0,rear=-1,n,i;
 
-    // Insert
-    queue[++rear] = 10;
-    queue[++rear] = 20;
-    queue[++rear] = 30;
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+
+    printf("Enter elements:\n");
+    for(i=0;i<n;i++)
+        scanf("%d",&q[++rear]);
 
     printf("Queue after insertion:\n");
+    for(i=front;i<=rear;i++)
+        printf("%d ",q[i]);
 
-    for(i = front; i <= rear; i++)
-    {
-        printf("%d ", queue[i]);
-    }
-
-    // Delete
-    printf("\nDeleted: %d", queue[front]);
-    front++;
+    printf("\nDeleted: %d",q[front++]);
 
     printf("\nQueue after deletion:\n");
-
-    for(i = front; i <= rear; i++)
-    {
-        printf("%d ", queue[i]);
-    }
+    for(i=front;i<=rear;i++)
+        printf("%d ",q[i]);
 
     return 0;
 }
